@@ -1,0 +1,21 @@
+<div class="login-container">
+    
+    <img src="assets/images/watch1.jpeg" alt="">
+    
+
+    <form class="login-form" (ngSubmit)="loginUser(loginFrom)" #loginFrom="ngForm">
+        <h3 *ngIf="errorMessage">{{errorMessage}}</h3>
+        <h2>LOGIN</h2>
+        <input type="text" id="email" placeholder="Email" name="email" ngModel>
+        <input type="password" id="passwrod" placeholder="Password" name="password" ngModel>
+        <button type="submit">Login</button>
+        <a routerLink="/signup">CREATE ACCOUNT</a>
+    </form>
+    
+
+
+
+
+
+
+</div>

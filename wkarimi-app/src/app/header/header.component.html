@@ -1,0 +1,26 @@
+<header>
+    <nav>
+        <div class="left-menu">
+            <a [routerLink]="['/']">KWatch</a>
+            
+                <!-- <li><a id="home" routerLink="/home" >Home</a></li> -->
+            <a *ngIf="userLoggedIn" [routerLink]="['/add-product']" >Add Prodcut</a>
+            
+        </div>
+        <ul class="right-menu">
+            <li>
+                <a *ngIf="!userLoggedIn" [routerLink]="['/login']" >Login</a>
+                 
+            </li>
+            <li>
+                <a *ngIf="!userLoggedIn" class="signup-align" [routerLink]="['/signup']" >Sign up</a>
+            </li>
+            <li *ngIf="userLoggedIn">
+                <a  class="signup-align" [routerLink]="['/logout']">Logout</a>
+
+            </li>
+            
+        </ul>
+
+    </nav>
+</header>

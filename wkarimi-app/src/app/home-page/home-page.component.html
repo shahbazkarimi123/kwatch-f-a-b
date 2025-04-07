@@ -1,0 +1,27 @@
+<!-- upper box -->
+<div class="outer-box">
+    <div class="floating-box">
+        <img src="assets/images/noImg.jpeg" alt="">
+        
+    </div>
+    <!-- List of all images -->
+
+    <div class="lower-container">
+        
+        <div class="card" *ngFor="let product of products">
+            <a [routerLink]="['/details',product.productId]">
+            <img  class="img-in-box" [src]="product.productFrontImgBase64 ? 'data:image/jpeg;base64,' + product.productFrontImgBase64 : 'assets/images/noImg.jpeg'"  alt="product image">
+            <div class="details">
+                <h3>{{product.productName}}</h3>
+                <div class="row-details">
+
+                    <p>{{product.price}} ₹</p>
+                    <p>{{product.discount}}% Off</p>
+                </div>
+
+            </div>
+            </a>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,38 @@
+<div class="box">
+    <!-- <h1>box body </h1> -->
+    <div class="inner-box">
+        <!-- <h1>inner box</h1> -->
+
+        <div *ngIf="product" class="image-box">
+            <img [src]="product.productFrontImgBase64 ? 'data:image/jpeg;base64,' + product.productFrontImgBase64 : 'assets/images/noImg.jpeg'" alt="product Image">
+        </div>
+
+    </div>
+    <div *ngIf="product" class="lower-box">
+        <hr>
+        <h3 style="text-align: center;">{{product.productTitle}}</h3>
+        <div class="item-details">
+            <div>
+
+                <p>Model: {{product.productName}}</p>
+                <p>Price: {{product.price}} &#8377;</p>
+            </div>
+            <div>
+                <p>Warrenty: {{product.warranty}}</p>
+                <p>Color: {{product.productColor}}</p>
+            </div>
+
+        </div>
+        <div>
+            
+            <p>Fabric: {{product.material}}</p>
+            <p >Colors: {{product.productColor}}</p>
+            <p>Weight: {{product.productWeight}}</p>
+            <p>Length: {{product.productLength}}, Width: {{product.productBreadth}}, Height: {{product.productHeight}}</p>
+            <p>Volume: {{product.productVolume}} cm&#179;</p>
+            <p>{{product.productDescription}}</p>
+
+        </div>
+    </div>
+    
+</div>

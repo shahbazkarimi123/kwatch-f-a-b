@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": "user-details"
+		},
+		{
+			"path": "watch"
+		},
+		{
+			"path": "wkarimi-app"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "wkarimi-app"
+	}
+}

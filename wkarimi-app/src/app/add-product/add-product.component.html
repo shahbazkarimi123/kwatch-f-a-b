@@ -1,0 +1,145 @@
+<div class="outer-body">
+    <div>
+        <h3>Product Details</h3>
+    </div>
+    <br>
+    <div class="container">
+        <div class="input-gap">
+            <label for="productName">Product Name </label>
+            <input type="text" [(ngModel)]="productName" placeholder="Enter product name">
+        </div>
+        <div class="input-gap">
+            <label for="brandName">Brand Name</label>
+            <input type="text" [(ngModel)]="brandName" placeholder="Enter brand name">
+        </div>
+        <div class="input-gap">
+            <label for="fabric">Fabric</label>
+            <input type="text" [(ngModel)]="fabric" placeholder="Enter fabric name">
+        </div>
+        <div class="input-gap">
+            <label for="material">Material</label>
+            <input type="text" [(ngModel)]="material" placeholder="Enter material name">
+        </div>
+        <div class="input-gap">
+            <label for="color">Colour</label>
+            <input type="text" name="color" [(ngModel)]="colorStr" (change)="color=colorStr.split(',')"
+                placeholder="Enter color name (comma separated)">
+        </div>
+        <div class="input-gap">
+            <label for="productWeight">Product weight</label>
+            <input type="number" name="productWeight" [(ngModel)]="productWeight" placeholder="Enter product weight">
+        </div>
+        <div class="input-gap">
+            <label for="packageWeight">Package weight</label>
+            <input type="number" [(ngModel)]="packageWeight" placeholder="Enter package weight">
+        </div>
+        
+        <div class="dimension-box">
+            <div class="input-gap">
+                <label for="length">Length (cm) </label>
+                <input type="number" [(ngModel)]="length" placeholder="Enter Length">
+            </div>
+            <div class="input-gap">
+                <label for="breadth">Breadth (cm) </label>
+                <input type="number" [(ngModel)]="breadth" placeholder="Enter breadth">
+            </div>
+            <div class="input-gap">
+                <label for="height">Height (cm)</label>
+                <input type="number" (change)="calulateVol()" [(ngModel)]="height" placeholder="Enter height">
+            </div>
+        </div>
+        <div>
+            <h4 *ngIf="volume">Volume: {{volume}} cm&#179;</h4>
+            <h4 *ngIf="area">Area: {{area}} cm&#178;</h4>
+        </div>
+        <div class="input-gap">
+            <label for="price">Price</label>
+            <input type="number" [(ngModel)]="price" placeholder="Enter price">
+        </div>
+        <div class="input-gap">
+            <label for="category">Category</label>
+            <select name="category" [(ngModel)]="category">
+                <option *ngFor="let catg of categoryOption" [value]="catg">{{catg}}</option>
+            </select>
+        </div>
+        <div class="input-gap">
+            <label for="warranty">Warranty </label>
+            <select name="warranty" id="warranty" [(ngModel)]="warranty">
+                <option *ngFor="let year of [1,2,3,4,5,'None']" [value]="year">{{year}}</option>
+            </select>
+        </div>
+        <!-- <br><br> -->
+        <div class="input-gap">
+            <label for="replacement">Replacement</label>
+            <select name="replacement" id="replacement" [(ngModel)]="replacement">
+                <option [value]="'None'">None</option>
+                <option [value]="true">Yes</option>
+                <option [value]="false">No</option>
+
+            </select>
+        </div>
+
+        <!-- <br><br> -->
+        <div class="input-gap">
+            <label for="productReturn">Return</label>
+            <select name="productReturn" id="productReturn" [(ngModel)]="productReturn">
+                <option [value]="'None'">None</option>
+                <option [value]="true">Yes</option>
+                <option [value]="false">No</option>
+            </select>
+        </div>
+
+        <hr>
+        <div class="image-box">
+            <div class="input-gap">
+
+
+                <label for="frontImg">Front Image</label>
+                <img *ngIf="previewUrl[0]" [src]="previewUrl[0]" alt="preview" >
+                <input type="file" name="frontImg" (change)="onFileSelected($event,0)" accept="image/*">
+            </div>
+
+            <div class="input-gap">
+
+                <label for="backImg">Back Image</label>
+                <img *ngIf="previewUrl[1]" [src]="previewUrl[1]" alt="preview" >
+
+                <input type="file" name="backImg" (change)="onFileSelected($event,1)" accept="image/*">
+            </div>
+            <div class="input-gap">
+
+                <label for="topImg">Top Image</label>
+                <img *ngIf="previewUrl[2]" [src]="previewUrl[2]" alt="preview" >
+
+                <input type="file" name="topImg" (change)="onFileSelected($event,2)" accept="image/*">
+            </div>
+            <div class="input-gap">
+
+                <label for="rightSide">Right Side Image</label>
+                <img *ngIf="previewUrl[3]" [src]="previewUrl[3]" alt="preview" >
+
+                <input type="file" name="rightSide" (change)="onFileSelected($event,3)" accept="image/*">
+            </div>
+            <div class="input-gap">
+
+                <label for="leftSide">Left Side Image</label>
+                <img *ngIf="previewUrl[4]" [src]="previewUrl[4]" alt="preview" >
+
+                <input type="file" name="leftSide" (change)="onFileSelected($event,4)" accept="image/*">
+            </div>
+
+
+        </div>
+        <div class="description-box">
+        <div class="input-gap">
+            <label for="description">Description</label>
+            <textarea id="description" id="description" rows="5" cols="40" [(ngModel)]="productDescription" placeholder="Write Description"></textarea>
+        </div>
+    </div>
+
+        <div>
+            <button (click)="createProduct()">Create New Product</button>
+        </div>
+    </div>
+
+</div>

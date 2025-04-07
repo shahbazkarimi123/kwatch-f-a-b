@@ -1,0 +1,108 @@
+.outer-body{
+    width: 90vw;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgb(255, 255, 255, 0.8);
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    margin-top: 20px;
+    padding-bottom: 2hv;
+    
+}
+
+.container{
+    display:flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.input-gap{
+    display: flex;
+    flex-direction: column;
+}
+
+.container input{
+    
+    padding: 10px;
+    border-radius: 8px;
+    border: 2px solid #ccc;
+    outline: none;
+    margin-top: 5px;
+}
+
+label{
+    padding-left: 10px;
+}
+
+.container input:hover{
+    box-shadow: 5px 5px 5px 2px rgb(44, 9, 9, 0.8);
+}
+
+.container select{
+    padding: 10px;
+    border-radius: 8px;
+    border: 2px solid #ccc;
+    outline: none;
+
+}
+
+.dimension-box{
+    background-color: aliceblue;
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: 3px solid gray;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.image-box{
+    background-color: aliceblue;
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: 3px solid gray;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+}
+
+img{
+    width: 20vw;
+    height: 25vh;
+    border-radius: 8px;
+    padding: 8px;
+}
+
+.container button{
+    padding: 10px;
+    border: none;
+    background: #007bff;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+textarea{
+    padding: 10px;
+    border-radius: 8px;
+    border: 2px solid #ccc;
+}
+textarea:focus{
+    outline: none;
+    border-color: #4a90e2;
+    box-shadow: 5px 5px 5px 2px rgba(44, 9, 9, 0.8);
+}
+
+button:hover{
+    box-shadow: 5px 5px 5px 2px rgba(44,9,9,0.8);
+}
+
+@media (max-width: 480px) {
+    img{
+        width: 30vw;
+        height: 10vh;
+    }
+    
+}
